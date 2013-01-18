@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
 	<![endif]-->
 </head>
-<body id="page1">
+<body id="page1" onload="initialize()">
 	<!--==============================header=================================-->
     <header>
     	<div class="row-1">
@@ -49,21 +49,11 @@
                             <span>Instalaciones</span>
                         </h1>
                     </div>
-                    <div class="grid_3">
-                    	<form id="search-form" method="post" enctype="multipart/form-data">
-                            <fieldset>	
-                                <div class="search-field">
-                                    <input name="search" type="text" />
-                                    <a class="search-button" href="#" onClick="document.getElementById('search-form').submit()"><span>search</span></a>	
-                                </div>						
-                            </fieldset>
-                        </form>
-                     </div>
                      <div class="clear"></div>
                 </div>
             </div>
         </div>    	
-    </header><div class="ic">More Website Templates  @ TemplateMonster.com - August22nd 2011!</div>
+    </header><div class="ic"></div>
     
 <!-- content -->
     <section id="content">
@@ -116,7 +106,7 @@
                             <div class="container_12">
                             	<div class="wrapper">
                                 	<article class="grid_12">
-                                    	<h3 class="color-1">Our Services List</h3>
+                                    	<h3 class="color-1">Nuestros servicios</h3>
                                         <div class="wrapper">
                                         	<article class="grid_6 alpha">
                                                 <figure class="img-indent frame"><img src="images/page1-img1.jpg" alt="" /></figure>
@@ -157,8 +147,7 @@
                 	<div class="wrapper">
                     	<article class="grid_4">
                         	<h3 class="prev-indent-bot">About Us</h3>
-                            <p class="prev-indent-bot">This <a target="_blank" href="http://blog.templatemonster.com/2011/08/22/free-website-template-clean-style-interior/ ">Interior Design Template</a> goes with two pack ages: with PSD source files and without them.</p>
-                            PSD source files are available for free for the registered members of Templates.com. The basic package (without PSD source) is available for anyone without registration.
+                            <iframe height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.es/maps?f=q&amp;source=s_q&amp;hl=es&amp;geocode=&amp;q=CALLE+PAZ,+4+HERENCIA+(CIUDAD+REAL)+&amp;aq=&amp;sll=38.982364,-3.926926&amp;sspn=0.099946,0.169258&amp;ie=UTF8&amp;hq=&amp;hnear=Calle+Paz,+4,+13640+Herencia,+Ciudad+Real&amp;t=m&amp;z=14&amp;ll=39.368376,-3.356631&amp;output=embed"></iframe><br /><small><a href="https://maps.google.es/maps?f=q&amp;source=embed&amp;hl=es&amp;geocode=&amp;q=CALLE+PAZ,+4+HERENCIA+(CIUDAD+REAL)+&amp;aq=&amp;sll=38.982364,-3.926926&amp;sspn=0.099946,0.169258&amp;ie=UTF8&amp;hq=&amp;hnear=Calle+Paz,+4,+13640+Herencia,+Ciudad+Real&amp;t=m&amp;z=14&amp;ll=39.368376,-3.356631" style="color:#0000FF;text-align:left">Ver mapa más grande</a></small>
                         </article>
                         <article class="grid_4">
                         	<h3 class="prev-indent-bot">Testimonials</h3>
@@ -170,9 +159,9 @@
                         </article>
                         <article class="grid_4">
                         	<h3 class="prev-indent-bot">What’s New?</h3>
-                            <time class="tdate-1" datetime="2011-08-15"><a class="link" href="#">15.08.2011</a></time>
+                            <time class="tdate-1" datetime="15-08-2013"><a class="link" href="#">15.08.2013</a></time>
                             <p class="prev-indent-bot">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
-                            <time class="tdate-1" datetime="2011-08-11"><a class="link" href="#">11.08.2011</a></time>
+                            <time class="tdate-1" datetime="11-08-2013"><a class="link" href="#">11.08.2013</a></time>
                             Totam rem aperiam, eaque ipsa quae ab illo inven tore veritatis et quasi architecto.
                         </article>
                     </div>
@@ -187,7 +176,7 @@
         	<div class="container_12">
             	<div class="wrapper">
                 	<div class="grid_4">
-                    	<div>Interior Design &copy; 2011 <a class="link color-3" href="#">Privacy Policy</a></div>
+                    	<div>Interior Design &copy; 2013 <a class="link color-3" href="#">Privacy Policy</a></div>
                         <div><a rel="nofollow" target="_blank" href="http://www.templatemonster.com/">Website Template</a> by TemplateMonster.com | <a rel="nofollow" target="_blank" href="http://www.html5xcss3.com/">html5xcss3.com</a></div>
                         <!-- {%FOOTER_LINK} -->
                     </div>
@@ -259,5 +248,54 @@
 			});
 		});
 	</script>
+	
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script type="text/javascript">
+			function initialize() {
+				var latlng = new google.maps.LatLng(39.3687, -3.3538);
+				var settings = {
+					zoom: 15,
+					center: latlng,
+					mapTypeControl: true,
+					mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+					navigationControl: false,
+					mapTypeId: google.maps.MapTypeId.ROADMAP};
+				var map = new google.maps.Map(document.getElementById("map_canvas"), settings);
+				var contentString = '<div id="content">'+
+					'<div id="siteNotice">'+
+					'</div>'+
+					'<h1 id="firstHeading" class="firstHeading">Aqui puedes encontrarnos</h1>'+
+					'<div id="bodyContent">'+
+					'<p>C/ Honda, nº 1 <br /> Herencia (Ciudad Real) <br/> 13640.</p>'+
+					'</div>'+
+					'</div>';
+				var infowindow = new google.maps.InfoWindow({
+					content: contentString
+				});
+				
+				var companyImage = new google.maps.MarkerImage('images/logo.png',
+					new google.maps.Size(100,50),
+					new google.maps.Point(0,0),
+					new google.maps.Point(50,50)
+				);
+
+				var companyShadow = new google.maps.MarkerImage('images/logo_shadow.png',
+					new google.maps.Size(130,50),
+					new google.maps.Point(0,0),
+					new google.maps.Point(65, 50));
+
+				var companyPos = new google.maps.LatLng(39.3687, -3.3538);
+
+				var companyMarker = new google.maps.Marker({
+					position: companyPos,
+					map: map,
+					icon: companyImage,
+					shadow: companyShadow,
+					title:"Nuestra tienda",
+					zIndex: 3});
+				
+			}
+		</script>
+	
 </body>
 </html>
