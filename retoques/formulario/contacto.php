@@ -1,3 +1,6 @@
+<?php session_start(); ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,21 +72,7 @@
                                             <div class="grid_12">
                                             	<div class="indent-left">
                                                 	<h3 class="p2">Contacto </h3>
-                                                    <form id="contact-form" method="post" enctype="multipart/form-data">                    
-                                                        <fieldset>
-                                                              <label><span class="text-form">Nombre:</span>
-                                                  <input name="p1" type="text" /></label>
-                                                              <label><span class="text-form">Email:</span><input name="p2" type="text" /></label>   
-                                                              <label><span class="text-form">Telefono:</span>
-                                                  <input name="p3" type="text" /></label>                                    
-                                                              <div class="wrapper">
-                                                                <div class="text-form">Mensage:</div><textarea></textarea></div>
-                                                              <div class="buttons">
-                                                                  <a class="button" href="#" onClick="document.getElementById('contact-form').reset()">Clear</a>
-                                                                  <a class="button" href="#" onClick="document.getElementById('contact-form').submit()">Send</a>
-                                                              </div>                             
-                                                        </fieldset>						
-                                                    </form>
+                                                   	<?php include "contact-form.php"; ?>
                                                 </div>
                                             </div>
                                         </div>
